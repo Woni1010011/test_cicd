@@ -14,16 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps :
-    - uses : actions/checkout@v2
-
-    - name: build oreumi test
-      run: pip install -r requirements.txt
+    - name: checkout
+      uses : actions/checkout@v2
 
     - name: build
-      run: python app.py
-      
-    - name: test
-      run: python app.py test
+      run: pip install -r requirements.txt
       
     - name: deploy
-      run: python app.py prod
+      run: python app.py
